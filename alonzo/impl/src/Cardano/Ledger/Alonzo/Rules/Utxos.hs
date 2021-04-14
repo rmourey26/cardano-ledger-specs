@@ -271,8 +271,6 @@ instance
   where
   wrapFailed = UpdateFailure
 
--- =================================================================
-
 constructValidated ::
   forall era m.
   ( MonadError [UtxosPredicateFailure era] m,

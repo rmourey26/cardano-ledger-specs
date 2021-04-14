@@ -10,9 +10,9 @@ module Cardano.Ledger.Alonzo.TxInfo where
 -- =============================================
 
 import Cardano.Crypto.Hash.Class (Hash (UnsafeHash))
-import Cardano.Ledger.Alonzo.Data (Data (..), getPlutusData)
+import Cardano.Ledger.Alonzo.Data (Data (..), DataHash, getPlutusData)
 import Cardano.Ledger.Alonzo.Scripts (CostModel (..), ExUnits (..), Script (..))
-import Cardano.Ledger.Alonzo.Tx
+import Cardano.Ledger.Alonzo.Tx (ScriptPurpose (..))
 import Cardano.Ledger.Alonzo.TxBody
   ( certs',
     inputs',
@@ -25,7 +25,7 @@ import Cardano.Ledger.Alonzo.TxBody
     wdrls',
   )
 import qualified Cardano.Ledger.Alonzo.TxBody as Alonzo (TxBody (..), TxOut (..))
-import Cardano.Ledger.Alonzo.TxWitness (TxWitness)
+import Cardano.Ledger.Alonzo.TxWitness (TxWitness, txdats')
 import Cardano.Ledger.Coin (Coin (..))
 import Cardano.Ledger.Core as Core (TxBody, TxOut, Value)
 import qualified Cardano.Ledger.Crypto as CC (Crypto)

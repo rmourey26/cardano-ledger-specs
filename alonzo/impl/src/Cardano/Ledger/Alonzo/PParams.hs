@@ -46,6 +46,7 @@ import Cardano.Ledger.Alonzo.Scripts
 import Cardano.Ledger.Coin (Coin (..))
 import Cardano.Ledger.Era
 import Cardano.Ledger.Hashes (EraIndependentPParamView)
+import Cardano.Ledger.Pretty (PrettyA (..), ppString)
 import Cardano.Ledger.SafeHash
   ( HashAnnotated (..),
     SafeToHash (..),
@@ -575,3 +576,8 @@ getLanguageView ::
   Language ->
   Maybe (LangDepView era)
 getLanguageView pp PlutusV1 = PlutusView <$> Map.lookup PlutusV1 (_costmdls pp)
+
+-- ========================================
+
+instance PrettyA (PParams' f era) where
+  prettyA _x = ppString "Alonzo PParams"

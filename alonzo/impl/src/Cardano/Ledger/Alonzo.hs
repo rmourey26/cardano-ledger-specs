@@ -68,6 +68,7 @@ import Control.Monad.Except (liftEither, runExcept)
 import Control.Monad.Reader (runReader)
 import Control.State.Transition.Extended (TRC (TRC))
 import qualified Data.Set as Set
+import Shelley.Spec.Ledger.API (ApplyTx (..))
 import qualified Shelley.Spec.Ledger.API as API
 import qualified Shelley.Spec.Ledger.BaseTypes as Shelley
 import Shelley.Spec.Ledger.LedgerState
@@ -136,8 +137,7 @@ instance API.PraosCrypto c => API.ApplyTx (AlonzoEra c) where
             $ TRC (env, state, tx)
      in liftEither . left (API.ApplyTxError . join) $ res
 
-  extractTx ValidatedTx {body, wits, auxiliaryData} =
-    Tx body wits auxiliaryData
+  extractTx ValidatedTx {body = b, wits = w, auxiliaryData = a} = Tx b w a
 
 instance API.PraosCrypto c => API.ApplyBlock (AlonzoEra c)
 
