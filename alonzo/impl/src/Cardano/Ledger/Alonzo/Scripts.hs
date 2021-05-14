@@ -57,6 +57,7 @@ import Cardano.Ledger.SafeHash
     SafeHash,
     SafeToHash (..),
   )
+import Cardano.Ledger.Serialization (mapFromCBOR)
 import Cardano.Ledger.ShelleyMA.Timelocks
 import Cardano.Ledger.Val (Val ((<+>), (<×>)))
 import Control.DeepSeq (NFData (..))
@@ -72,7 +73,6 @@ import NoThunks.Class (InspectHeapNamed (..), NoThunks)
 import Numeric.Natural (Natural)
 import qualified Plutus.V1.Ledger.Api as Plutus (validateCostModelParams)
 import qualified Plutus.V1.Ledger.Examples as Plutus (alwaysFailingNAryFunction, alwaysSucceedingNAryFunction)
-import Shelley.Spec.Ledger.Serialization (mapFromCBOR)
 
 -- | Marker indicating the part of a transaction for which this script is acting
 -- as a validator.

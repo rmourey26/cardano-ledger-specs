@@ -45,6 +45,14 @@ import Cardano.Ledger.Alonzo.TxWitness
 import Cardano.Ledger.Coin (Coin (..))
 import Cardano.Ledger.Era (ValidateScript (..))
 import Cardano.Ledger.Hashes (ScriptHash)
+import Cardano.Ledger.Keys
+  ( GenDelegs (..),
+    KeyHash,
+    KeyPair (..),
+    KeyRole (..),
+    asWitness,
+    hashKey,
+  )
 import Cardano.Ledger.Mary.Value
   ( AssetName (..),
     PolicyID (..),
@@ -93,14 +101,6 @@ import Shelley.Spec.Ledger.Credential
   ( Credential (..),
     StakeCredential,
     StakeReference (..),
-  )
-import Shelley.Spec.Ledger.Keys
-  ( GenDelegs (..),
-    KeyHash,
-    KeyPair (..),
-    KeyRole (..),
-    asWitness,
-    hashKey,
   )
 import Shelley.Spec.Ledger.LedgerState (UTxOState (..))
 import Shelley.Spec.Ledger.STS.Utxo (UtxoEnv (..))
