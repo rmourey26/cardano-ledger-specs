@@ -42,6 +42,7 @@ import Cardano.Ledger.Alonzo.TxWitness
     Redeemers (..),
     TxWitness (..),
   )
+import Cardano.Ledger.BaseTypes (Network (..), StrictMaybe (..))
 import Cardano.Ledger.Coin (Coin (..))
 import Cardano.Ledger.Era (ValidateScript (..))
 import Cardano.Ledger.Hashes (ScriptHash)
@@ -96,7 +97,6 @@ import qualified PlutusCore.Evaluation.Machine.ExMemory as P
 import qualified PlutusTx as Plutus
 import Shelley.Spec.Ledger.API (WitHashes (WitHashes))
 import Shelley.Spec.Ledger.Address (Addr (..))
-import Shelley.Spec.Ledger.BaseTypes (Network (..), StrictMaybe (..))
 import Shelley.Spec.Ledger.Credential
   ( Credential (..),
     StakeCredential,
